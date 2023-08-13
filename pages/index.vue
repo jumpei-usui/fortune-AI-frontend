@@ -1,3 +1,3 @@
 <template>
-  <NuxtWelcome />
+  <v-btn> Button </v-btn>
 </template>
