@@ -17,4 +17,5 @@ export default defineNuxtConfig({
       "window.global": {},
     },
   },
+  ssr: false,
 });
