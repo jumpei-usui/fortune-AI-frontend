@@ -1,5 +1,9 @@
 <script setup lang="ts">
-const props = defineProps({ title: String });
+interface Props {
+  title: string;
+}
+
+const props = defineProps<Props>();
 </script>
 
 <template>

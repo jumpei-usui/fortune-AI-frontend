@@ -3,10 +3,12 @@ const title = "タイトル";
 </script>
 
 <template>
-  <v-app>
+  <v-layout>
     <atoms-header :title="title"></atoms-header>
     <v-main>
-      <slot></slot>
+      <v-container class="ma-4">
+        <slot></slot>
+      </v-container>
     </v-main>
-  </v-app>
+  </v-layout>
 </template>
