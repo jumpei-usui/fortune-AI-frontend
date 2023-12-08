@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   modules: ["@invictus.codes/nuxt-vuetify"],
   runtimeConfig: {
     public: {
-      REGION: process.env.REGION,
       USER_POOL_ID: process.env.USER_POOL_ID,
       USER_POOL_WEB_CLIENT_ID: process.env.USER_POOL_WEB_CLIENT_ID,
       DOMAIN: process.env.DOMAIN,
@@ -11,11 +10,7 @@ export default defineNuxtConfig({
       REDIRECT_SIGN_OUT: process.env.REDIRECT_SIGN_OUT,
     },
   },
-  vite: {
-    define: {
-      "window.global": {},
-    },
-  },
   spaLoadingTemplate: false,
   ssr: false,
+  components: [{ path: "~/components", pathPrefix: false }],
 });

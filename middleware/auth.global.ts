@@ -1,10 +1,10 @@
-import { Auth } from "aws-amplify";
+import { getCurrentUser } from "aws-amplify/auth";
 
 export default defineNuxtRouteMiddleware(async (to) => {
   try {
-    await Auth.currentAuthenticatedUser();
+    await getCurrentUser();
   } catch {
-    if (to.path !== "/") {
+    if (to.path !== "/" && to.path !== "/test") {
       return navigateTo("/");
     }
   }

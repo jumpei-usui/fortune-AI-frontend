@@ -4,11 +4,9 @@ const title = "タイトル";
 
 <template>
   <v-layout>
-    <atoms-header :title="title"></atoms-header>
+    <a-header :title="title"></a-header>
     <v-main>
-      <v-container class="ma-4">
-        <slot></slot>
-      </v-container>
+      <slot></slot>
     </v-main>
   </v-layout>
 </template>

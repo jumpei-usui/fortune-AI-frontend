@@ -5,16 +5,19 @@ export default defineNuxtPlugin(() => {
 
   Amplify.configure({
     Auth: {
-      region: config.public.REGION,
-      userPoolId: config.public.USER_POOL_ID,
-      userPoolWebClientId: config.public.USER_POOL_WEB_CLIENT_ID,
-      oauth: {
-        domain: config.public.DOMAIN,
-        scope: ["email", "openid"],
-        redirectSignIn: config.public.REDIRECT_SIGN_IN,
-        redirectSignOut: config.public.REDIRECT_SIGN_OUT,
-        responseType: "code",
-      },
+      Cognito: {
+        userPoolId: config.public.USER_POOL_ID,
+        userPoolClientId: config.public.USER_POOL_WEB_CLIENT_ID,
+        loginWith: {
+          oauth: {
+            domain: config.public.DOMAIN,
+            scopes: ["email", "openid"],
+            redirectSignIn: [config.public.REDIRECT_SIGN_IN],
+            redirectSignOut: [config.public.REDIRECT_SIGN_OUT],
+            responseType: "code",
+          },
+        }
+      }
     },
   });
 });
